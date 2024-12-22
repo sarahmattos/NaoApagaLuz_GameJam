@@ -39,7 +39,7 @@ public class SwitchsManager : MonoBehaviour
     {
         registeredObjects = new List<StateManager>(FindObjectsOfType<StateManager>());
         total = registeredObjects.Count;
-        RandomizeStateSwitchs();
+        //RandomizeStateSwitchs();
         //StartCoroutine(TurnOff());
     }
     public void CalculatePercent()

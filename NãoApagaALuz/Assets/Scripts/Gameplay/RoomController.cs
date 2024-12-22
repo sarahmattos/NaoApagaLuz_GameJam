@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoomController : MonoBehaviour
 {
     public StateManager[] ligths;
+    public GameObject door;
     [SerializeField] private GameObject ligthParent;
     void Start()
     {

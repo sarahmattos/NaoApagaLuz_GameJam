@@ -67,8 +67,8 @@ public class IaController : MonoBehaviour
                 if (!SearchForLigthsOn())
                 {
                     // Se nenhuma luz foi encontrada, volte a procurar salas
-                    currentIaState = IaState.SearchRoom;
-                    RandomizeTarget();
+                    currentIaState = IaState.LockDoor;
+                    DoSomething();
                 }
                 break;
 
@@ -87,11 +87,16 @@ public class IaController : MonoBehaviour
                     else
                     {
                         // Apagou no máximo 3 luzes, volte a procurar salas
-                        currentIaState = IaState.SearchRoom;
-                        RandomizeTarget();
+                        currentIaState = IaState.LockDoor;
+                        DoSomething();
                     }
                     
                 }
+                break;
+            case IaState.LockDoor:
+                RoomsControl.Instance.SearchNearstDoorFromPlayer();
+                currentIaState = IaState.SearchRoom;
+                RandomizeTarget();
                 break;
         }
     }
@@ -125,10 +130,11 @@ public class IaController : MonoBehaviour
         return false;
     }
 
-    private void OnGUI()
+   /* private void OnGUI()
     {
         GUILayout.BeginArea(new Rect(10, 10, 300, 300));
         if (GUILayout.Button("SetTarget")) RandomizeTarget();
         GUILayout.EndArea();
     }
+    */
 }

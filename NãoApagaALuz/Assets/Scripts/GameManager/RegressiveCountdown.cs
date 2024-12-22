@@ -13,9 +13,12 @@ public class RegressiveCountdown : MonoBehaviour
     private void Start()
     {
         remainingTime = (startMinutes * 60) + startSeconds;
+    }
+    public void StartCouroutineTime()
+    {
+
         StartCoroutine(StartCountdown());
     }
-
     private IEnumerator StartCountdown()
     {
         while (remainingTime > 0)
