@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 4774207587184087289}
   - component: {fileID: 9093425704158090464}
   - component: {fileID: 9084829150629301785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 4454823031407751755}
   - component: {fileID: 5100427857568750691}
   - component: {fileID: 6066633694337251348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}

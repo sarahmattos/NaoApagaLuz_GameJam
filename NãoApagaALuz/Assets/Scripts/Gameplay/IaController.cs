@@ -31,7 +31,6 @@ public class IaController : MonoBehaviour
     {
         if (navmesh != null)
         {
-            Debug.Log("SETOU");
             navmesh.SetDestination(target.position);
         }
     }

@@ -11,17 +11,22 @@ public class Door : MonoBehaviour
     float timeDoor = 12;
 
     [SerializeField] private TMP_Text countText;
+    [SerializeField] private TMP_Text countText2;
     [SerializeField] private TMP_Text timeRemaningDoorText;
+    [SerializeField] private TMP_Text timeRemaningDoorText2;
 
     private float timeDoorRemaining;
     private void OnEnable()
     {
         countText.text ="Clicks remaining "+ clickCount.ToString();
+        countText2.text ="Clicks remaining "+ clickCount.ToString();
     }
-    private void OnMouseDown()
+
+    public void OnInteract()
     {
         clickCount--;
         countText.text = "Clicks remaining " + clickCount.ToString();
+        countText2.text = "Clicks remaining " + clickCount.ToString();
         if (clickCount == 0)
         {
             Reset();
@@ -42,6 +47,7 @@ public class Door : MonoBehaviour
         {
             timeDoorRemaining -= Time.deltaTime;
             timeRemaningDoorText.text = "Time remaining " + Mathf.Floor(timeDoorRemaining).ToString();
+            timeRemaningDoorText2.text = "Time remaining " + Mathf.Floor(timeDoorRemaining).ToString();
 
             yield return null;
         }

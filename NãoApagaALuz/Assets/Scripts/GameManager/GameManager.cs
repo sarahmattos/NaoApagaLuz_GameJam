@@ -20,5 +20,15 @@ public class GameManager : MonoBehaviour
        GUILayout.EndArea();
 
    }
-  
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            StartGame();
+        }
+    }
+    private void Start()
+    {
+        
+    }
 }

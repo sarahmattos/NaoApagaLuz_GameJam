@@ -50,14 +50,12 @@ public class StateManager : MonoBehaviour
             case SwitchState.ON:
 
                 buttonSwitch.SetLigthOn(IsAcesso());
-                Debug.Log("Objeto está no estado: Acesso");
                 SwitchsManager.Instance.CalculatePercent();
                 break;
 
             case SwitchState.OFF:
 
                 buttonSwitch.SetLigthOn(IsAcesso());
-                Debug.Log("Objeto está no estado: Apagado");
                 SwitchsManager.Instance.CalculatePercent();
                 break;
         }
@@ -75,10 +73,6 @@ public class StateManager : MonoBehaviour
                 break;
         }
     }
-    private void OnMouseDown()
-    {
-        SetState(SwitchState.ON);
-        //SwitchCurrentState();
-    }
+   
 
 }
