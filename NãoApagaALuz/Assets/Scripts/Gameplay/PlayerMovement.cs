@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static SwitchBehauviour;
@@ -17,16 +18,22 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Interact")]
     public float interactionRange = 8f; // Distância máxima para interagir
+    public float interactionGunRange = 12f; // Distância máxima para interagir
     public LayerMask interactableLayerDoors; // Layer dos objetos interativos
     public LayerMask interactableLayerSwitchs; // Layer dos objetos interativos
     public LayerMask interactableLayerIA; // Layer dos objetos interativos
     public Camera playerCamera;
 
-    public bool canStunn = false;
+    [Header("Stun")]
+    private bool canStunn = false;
+    private bool canGetGun = false;
     public Slider sliderStunn; 
+    public Image imageEstun; 
+    public TMP_Text textEstun; 
     public float totalTime = 15f; 
     public float stunTime = 6f; 
-    private float timeElapsed = 0f;  
+    private float timeElapsed = 0f;
+    [SerializeField] GameObject gun;
 
     [Header("Stamina")]
     public Slider staminaBar; // Referência à barra de estamina na UI
@@ -73,18 +80,25 @@ public class PlayerMovement : MonoBehaviour
                     currentSwitch.SetState(SwitchState.ON); // Executa a interação
                 }
             }
-            if (Physics.Raycast(ray, out RaycastHit IaHit, interactionRange, interactableLayerIA))
+
+            if (canStunn)
             {
-                IaController ia= IaHit.collider.GetComponent<IaController>();
-                if (ia != null)
+                if (Physics.Raycast(ray, out RaycastHit IaHit, interactionGunRange, interactableLayerIA))
                 {
-                    if (canStunn)
+                    IaController ia = IaHit.collider.GetComponent<IaController>();
+                    if (ia != null)
                     {
                         ia.CallGetStunned(stunTime);
                         ResetSlider();
+                        
                     }
                 }
+                else
+                {
+                    ResetSlider();
+                }
             }
+            
         }
     }
     void Update()
@@ -100,9 +114,21 @@ public class PlayerMovement : MonoBehaviour
             sliderStunn.value = timeElapsed / totalTime;  
         }
 
-        if (sliderStunn.value >= 1f && !canStunn)
+        if (sliderStunn.value >= 1f && !canGetGun)
         {
-            canStunn = true;
+            canGetGun = true;
+            imageEstun.gameObject.SetActive(true);
+            textEstun.gameObject.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (canGetGun && !canStunn)
+            {
+                gun.SetActive(true);
+                canStunn = true;
+                imageEstun.gameObject.SetActive(false);
+                textEstun.gameObject.SetActive(false);
+            }
         }
  
     }
@@ -112,7 +138,11 @@ public class PlayerMovement : MonoBehaviour
     {
         timeElapsed = 0f;  
         sliderStunn.value = 0; 
-        canStunn = false;  
+        canStunn = false;
+        canGetGun = false;
+        gun.SetActive(false);
+        imageEstun.gameObject.SetActive(false);
+        textEstun.gameObject.SetActive(true);
     }
 
     void MovePlayer()

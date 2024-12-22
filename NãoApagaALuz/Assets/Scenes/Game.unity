@@ -3609,6 +3609,7 @@ MonoBehaviour:
   mouseSensitivity: 2
   gravity: -9.72
   interactionRange: 4
+  interactionGunRange: 12
   interactableLayerDoors:
     serializedVersion: 2
     m_Bits: 128
@@ -3619,10 +3620,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   playerCamera: {fileID: 1045225684340660243}
-  canStunn: 0
   sliderStunn: {fileID: 286601497}
+  imageEstun: {fileID: 1370043931}
+  textEstun: {fileID: 463075060}
   totalTime: 15
   stunTime: 6
+  gun: {fileID: 1904099153}
   staminaBar: {fileID: 1547463936}
   maxStamina: 100
   stamina: 100
