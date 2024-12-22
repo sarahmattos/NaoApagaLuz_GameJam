@@ -9,22 +9,37 @@ public class IaController : MonoBehaviour
     private NavMeshAgent navmesh;
     public Transform TARGET;
     public IaState currentIaState = IaState.SearchRoom;
+    public IaState previousIaState = IaState.SearchRoom;
     public RoomController currentRoom;
     public int searchCount, maxCount;
     public List<StateManager> ligthsOn = new List<StateManager>();
     private int currentLightIndex = 0;
-    public bool startGame = false;
+    float speed;
 
     public enum IaState
     {
         SearchRoom,
         SearchLigth,
-        LockDoor
+        LockDoor,
+        Stunned
     }
-
+    public void CallGetStunned(float value)
+    {
+       if(currentIaState != IaState.Stunned) StartCoroutine(GotStunned(value));
+    }
+    private IEnumerator GotStunned(float v)
+    {
+        previousIaState = currentIaState;
+        currentIaState = IaState.Stunned;
+        navmesh.speed = 0;
+        yield return new WaitForSeconds(v);
+        currentIaState = previousIaState;
+        navmesh.speed = speed;
+    }
     void Start()
     {
         navmesh = GetComponent<NavMeshAgent>();
+        speed = navmesh.speed;
     }
 
     public void SetTarget(Transform target)
@@ -37,10 +52,7 @@ public class IaController : MonoBehaviour
 
     public void RandomizeTarget()
     {
-        if (!startGame)
-        {
-            startGame = true;
-        }
+        
 
         idSort = Random.Range(0, RoomsControl.Instance.rooms.Length);
         while (idSort == oldSort)
@@ -54,7 +66,7 @@ public class IaController : MonoBehaviour
 
     void Update()
     {
-        if (HasReachedDestination() && startGame)
+        if (HasReachedDestination() && GameManager.instance.startedGame)
         {
             DoSomething();
         }
@@ -68,7 +80,6 @@ public class IaController : MonoBehaviour
                 currentIaState = IaState.SearchLigth;
                 if (!SearchForLigthsOn())
                 {
-                    // Se nenhuma luz foi encontrada, volte a procurar salas
                     currentIaState = IaState.LockDoor;
                     DoSomething();
                 }
@@ -77,18 +88,15 @@ public class IaController : MonoBehaviour
             case IaState.SearchLigth:
                 if (HasReachedDestination())
                 {
-                // Apague a luz atual
                     ligthsOn[currentLightIndex].SetState(SwitchBehauviour.SwitchState.OFF);
                     currentLightIndex++;
 
-                    //talvez nessa hora seria bom atualizar a lista
                     if (currentLightIndex < ligthsOn.Count)
                     {
                         SetTarget(ligthsOn[currentLightIndex].transform);
                     }
                     else
                     {
-                        // Apagou no máximo 3 luzes, volte a procurar salas
                         currentIaState = IaState.LockDoor;
                         DoSomething();
                     }
@@ -111,7 +119,6 @@ public class IaController : MonoBehaviour
         if (navmesh.remainingDistance > navmesh.stoppingDistance)
             return false;
 
-        // Verifica se o agente está parado.
         return !navmesh.hasPath || navmesh.velocity.sqrMagnitude == 0f;
     }
 

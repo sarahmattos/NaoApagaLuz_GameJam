@@ -19,20 +19,27 @@ public class PlayerMovement : MonoBehaviour
     public float interactionRange = 8f; // Distância máxima para interagir
     public LayerMask interactableLayerDoors; // Layer dos objetos interativos
     public LayerMask interactableLayerSwitchs; // Layer dos objetos interativos
+    public LayerMask interactableLayerIA; // Layer dos objetos interativos
     public Camera playerCamera;
+
+    public bool canStunn = false;
+    public Slider sliderStunn; 
+    public float totalTime = 15f; 
+    public float stunTime = 6f; 
+    private float timeElapsed = 0f;  
 
     [Header("Stamina")]
     public Slider staminaBar; // Referência à barra de estamina na UI
     public float maxStamina = 100f; // Máxima estamina
     public float stamina = 100f; // Estamina atual
-    public float staminaConsumptionRate = 40f; // Consumo de estamina por segundo ao correr
+    public float staminaConsumptionRate = 30f; // Consumo de estamina por segundo ao correr
     public float staminaRegenRate = 10f; // Regeneração de estamina por segundo
     public float minStaminaToRun = 10f; // Estamina mínima para correr
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked; // Trava o cursor no centro da tela
-
+        sliderStunn.value = 0;
         if (staminaBar != null)
         {
             staminaBar.maxValue = maxStamina;
@@ -66,6 +73,18 @@ public class PlayerMovement : MonoBehaviour
                     currentSwitch.SetState(SwitchState.ON); // Executa a interação
                 }
             }
+            if (Physics.Raycast(ray, out RaycastHit IaHit, interactionRange, interactableLayerIA))
+            {
+                IaController ia= IaHit.collider.GetComponent<IaController>();
+                if (ia != null)
+                {
+                    if (canStunn)
+                    {
+                        ia.CallGetStunned(stunTime);
+                        ResetSlider();
+                    }
+                }
+            }
         }
     }
     void Update()
@@ -74,6 +93,26 @@ public class PlayerMovement : MonoBehaviour
         RotatePlayerWithMouse();
 
         HandleInteraction();
+        if (!GameManager.instance.startedGame) return;
+        if (sliderStunn.value < 1f)
+        {
+            timeElapsed += Time.deltaTime;  
+            sliderStunn.value = timeElapsed / totalTime;  
+        }
+
+        if (sliderStunn.value >= 1f && !canStunn)
+        {
+            canStunn = true;
+        }
+ 
+    }
+
+    // Função para reiniciar o slider
+    void ResetSlider()
+    {
+        timeElapsed = 0f;  
+        sliderStunn.value = 0; 
+        canStunn = false;  
     }
 
     void MovePlayer()

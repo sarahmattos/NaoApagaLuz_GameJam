@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public bool startedGame = false;
+    public static GameManager instance;
     public void StartGame()
     {
+       startedGame = true;
        SwitchsManager.Instance.RandomizeStateSwitchs();
        FindAnyObjectByType<IaController>().RandomizeTarget();
        FindAnyObjectByType<RegressiveCountdown>().StartCouroutineTime();
@@ -29,6 +32,6 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        
+        instance = this;
     }
 }

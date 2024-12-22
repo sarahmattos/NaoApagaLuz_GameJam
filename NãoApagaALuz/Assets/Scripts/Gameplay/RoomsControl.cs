@@ -43,7 +43,7 @@ public class RoomsControl : MonoBehaviour
 
     void Update()
     {
-        if (!FindAnyObjectByType<IaController>().startGame) return;
+        if (!GameManager.instance.startedGame) return;
         if (timeElapsed < totalTime)
         {
             timeElapsed += Time.deltaTime;
