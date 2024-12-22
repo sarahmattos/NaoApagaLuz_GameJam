@@ -29,17 +29,18 @@ public class RoomsControl : MonoBehaviour
     {
         return rooms[id];
     }
-    public StateManager FindLigthOn(RoomController room)
+    public List<StateManager> FindAllLigthsOn(RoomController room)
     {
+        List<StateManager> lightsOn = new List<StateManager>();
+
         foreach (StateManager state in room.ligths)
         {
-            if(state.IsAcesso())return state;
+            if (state.IsAcesso()) 
+            {
+                lightsOn.Add(state);
+            }
         }
-        return null;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+        return lightsOn;
     }
 }

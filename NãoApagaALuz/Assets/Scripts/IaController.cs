@@ -2,28 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEngine.GraphicsBuffer;
-using static RoomsControl;
 
 public class IaController : MonoBehaviour
 {
     public int idSort, oldSort;
     private NavMeshAgent navmesh;
     public Transform TARGET;
-    public IaState currentIaState=IaState.SearchRoom;
+    public IaState currentIaState = IaState.SearchRoom;
     public RoomController currentRoom;
     public int searchCount, maxCount;
-    bool startGame=false;
-    public enum IaState { 
+    public List<StateManager> ligthsOn = new List<StateManager>();
+    private int currentLightIndex = 0;
+    bool startGame = false;
+
+    public enum IaState
+    {
         SearchRoom,
         SearchLigth,
         LockDoor
-        };
+    }
+
     void Start()
     {
         navmesh = GetComponent<NavMeshAgent>();
-        //RandomizeTarget();
     }
+
     public void SetTarget(Transform target)
     {
         if (navmesh != null)
@@ -32,48 +35,67 @@ public class IaController : MonoBehaviour
             navmesh.SetDestination(target.position);
         }
     }
+
     public void RandomizeTarget()
     {
-        if (!startGame) startGame=true;
+        if (!startGame) startGame = true;
+
         idSort = Random.Range(0, RoomsControl.Instance.rooms.Length);
-        while(idSort==oldSort)
+        while (idSort == oldSort)
         {
             idSort = Random.Range(0, RoomsControl.Instance.rooms.Length);
         }
         oldSort = idSort;
         currentRoom = RoomsControl.Instance.ReturnTargetRoom(idSort);
         SetTarget(RoomsControl.Instance.ReturnTargetRoom(idSort).transform);
-        
     }
+
     void Update()
     {
-        if (HasReachedDestination()&& startGame)
+        if (HasReachedDestination() && startGame)
         {
             DoSomething();
         }
     }
+
     private void DoSomething()
     {
-        switch(currentIaState)
+        switch (currentIaState)
         {
             case IaState.SearchRoom:
                 currentIaState = IaState.SearchLigth;
-                SearchForLigthsOn();
-                break;
-            case IaState.SearchLigth:
                 if (!SearchForLigthsOn())
                 {
+                    // Se nenhuma luz foi encontrada, volte a procurar salas
                     currentIaState = IaState.SearchRoom;
                     RandomizeTarget();
                 }
-                else
-                {
-                    SearchForLigthsOn();
-                }
+                break;
 
+            case IaState.SearchLigth:
+                if (HasReachedDestination())
+                {
+                // Apague a luz atual
+                    ligthsOn[currentLightIndex].SetState(SwitchBehauviour.SwitchState.OFF);
+                    currentLightIndex++;
+
+                    //talvez nessa hora seria bom atualizar a lista
+                    if (currentLightIndex < ligthsOn.Count)
+                    {
+                        SetTarget(ligthsOn[currentLightIndex].transform);
+                    }
+                    else
+                    {
+                        // Apagou no máximo 3 luzes, volte a procurar salas
+                        currentIaState = IaState.SearchRoom;
+                        RandomizeTarget();
+                    }
+                    
+                }
                 break;
         }
     }
+
     private bool HasReachedDestination()
     {
         if (navmesh.pathPending)
@@ -85,33 +107,28 @@ public class IaController : MonoBehaviour
         // Verifica se o agente está parado.
         return !navmesh.hasPath || navmesh.velocity.sqrMagnitude == 0f;
     }
+
     public bool SearchForLigthsOn()
     {
-        searchCount++;
-        StateManager state= RoomsControl.Instance.FindLigthOn(currentRoom);
-        if(state!=null && searchCount< maxCount)
+        ligthsOn.Clear();
+        List<StateManager> allLigthsOn = RoomsControl.Instance.FindAllLigthsOn(currentRoom);
+
+        ligthsOn.AddRange(allLigthsOn.GetRange(0, Mathf.Min(allLigthsOn.Count, maxCount)));
+
+        if (ligthsOn.Count > 0)
         {
-            //manda apagar aqui
-            state.SetState(SwitchBehauviour.SwitchState.OFF);
+            currentLightIndex = 0;
+            SetTarget(ligthsOn[currentLightIndex].transform);
             return true;
         }
-        else
-        {
 
-            searchCount = 0;
-            return false;
-        }
+        return false;
     }
 
-     private void OnGUI()
+    private void OnGUI()
     {
-
-        {
-            GUILayout.BeginArea(new Rect(10, 10, 300, 300));
-            if (GUILayout.Button("SetTarget")) RandomizeTarget();
-            // if (GUILayout.Button("Calculate")) CalculatePercent();
-        }
+        GUILayout.BeginArea(new Rect(10, 10, 300, 300));
+        if (GUILayout.Button("SetTarget")) RandomizeTarget();
         GUILayout.EndArea();
-
     }
 }
