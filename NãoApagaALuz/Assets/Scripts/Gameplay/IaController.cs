@@ -13,7 +13,7 @@ public class IaController : MonoBehaviour
     public int searchCount, maxCount;
     public List<StateManager> ligthsOn = new List<StateManager>();
     private int currentLightIndex = 0;
-    bool startGame = false;
+    public bool startGame = false;
 
     public enum IaState
     {
@@ -38,7 +38,10 @@ public class IaController : MonoBehaviour
 
     public void RandomizeTarget()
     {
-        if (!startGame) startGame = true;
+        if (!startGame)
+        {
+            startGame = true;
+        }
 
         idSort = Random.Range(0, RoomsControl.Instance.rooms.Length);
         while (idSort == oldSort)
