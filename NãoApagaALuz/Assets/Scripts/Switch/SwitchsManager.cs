@@ -64,8 +64,8 @@ public class SwitchsManager : MonoBehaviour
         float decimalPercent = percent / 100;
 
         ligthSlider.value = decimalPercent;
-        float darkScore = 100 - percent;
-        float ligthScore = percent;
+        float ligthScore = Mathf.RoundToInt(percent); 
+        float darkScore = 100 - ligthScore;
 
         ligthScoreText.text= ligthScore.ToString();
         darkScoreText.text= darkScore.ToString();
