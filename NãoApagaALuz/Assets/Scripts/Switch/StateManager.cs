@@ -4,11 +4,12 @@ using static SwitchBehauviour;
 
 public class StateManager : MonoBehaviour
 {
-    public SwitchState currentState = SwitchState.OFF; // Estado inicial
+    public SwitchState currentState;
     private SwitchBehauviour buttonSwitch;
     private void Start()
     {
         buttonSwitch = gameObject.GetComponent<SwitchBehauviour>();
+        SetState(SwitchState.ON);
     }
     public void SetState(SwitchState newState)
     {
@@ -59,16 +60,21 @@ public class StateManager : MonoBehaviour
                 break;
         }
     }
-    private void OnGUI()
+    private void OnMouseDown()
     {
-
-        {
-            GUILayout.BeginArea(new Rect(10, 10, 300, 300));
-            if (GUILayout.Button("Switch")) SwitchCurrentState();
-            if (GUILayout.Button("Acender"))SetState(SwitchState.ON);
-            if (GUILayout.Button("Apagar")) SetState(SwitchState.OFF);
-        }
-        GUILayout.EndArea();
+        SwitchCurrentState();
     }
+    /* private void OnGUI()
+     {
+
+         {
+             GUILayout.BeginArea(new Rect(10, 10, 300, 300));
+             if (GUILayout.Button("Switch")) SwitchCurrentState();
+             if (GUILayout.Button("Acender"))SetState(SwitchState.ON);
+             if (GUILayout.Button("Apagar")) SetState(SwitchState.OFF);
+         }
+         GUILayout.EndArea();
+     }
+    */
 
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwitchBehauviour : MonoBehaviour
 {
     private Animator AnimSwitch; 
+    [SerializeField] private GameObject Ligth; 
     // Start is called before the first frame update
     [System.Serializable]
     public enum SwitchState
@@ -19,11 +20,9 @@ public class SwitchBehauviour : MonoBehaviour
     }
     public void SetLigthOn(bool stateOn)
     {
-        AnimSwitch.gameObject.SetActive(stateOn);
+        //AnimSwitch.gameObject.SetActive(stateOn);
+        Ligth.SetActive(stateOn);
     }
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
