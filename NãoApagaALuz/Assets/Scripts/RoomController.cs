@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomController : MonoBehaviour
 {
-    public  StateManager[] ligths;
+    public StateManager[] ligths;
     [SerializeField] private GameObject ligthParent;
     void Start()
     {

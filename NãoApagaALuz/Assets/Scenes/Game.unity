@@ -385,6 +385,10 @@ MonoBehaviour:
   idSort: 0
   oldSort: 0
   TARGET: {fileID: 551498536}
+  currentIaState: 0
+  currentRoom: {fileID: 0}
+  searchCount: 0
+  maxCount: 2
 --- !u!1 &226991826
 GameObject:
   m_ObjectHideFlags: 0
