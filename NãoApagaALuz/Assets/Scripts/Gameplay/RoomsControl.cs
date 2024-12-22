@@ -16,8 +16,7 @@ public class RoomsControl : MonoBehaviour
 
     bool canCloseDoor = false;
 
-    [SerializeField] private Slider slider;
-    [SerializeField] private float totalTime = 20f;  
+    [SerializeField] private float totalTime = 15f;  
     private float timeElapsed = 0f; 
 
     public static RoomsControl Instance;
@@ -40,28 +39,25 @@ public class RoomsControl : MonoBehaviour
         {
             allDoors.Add(go.door);
         }
-        slider.value = 0;
     }
 
     void Update()
     {
         if (!FindAnyObjectByType<IaController>().startGame) return;
-        if (slider.value < 1f)
+        if (timeElapsed < totalTime)
         {
             timeElapsed += Time.deltaTime;
-            slider.value = timeElapsed / totalTime;
         }
-
-        if (slider.value >= 1f && !canCloseDoor)
+        else
         {
             canCloseDoor = true;
         }
+
     }
 
-    void ResetSlider()
+    void ResetTimerLockDoor()
     {
         timeElapsed = 0f;  
-        slider.value = 0;
         canCloseDoor = false; 
     }
     public RoomController ReturnTargetRoom(int id)
@@ -97,7 +93,7 @@ public class RoomsControl : MonoBehaviour
         }
         if (canCloseDoor)
         {
-            ResetSlider();
+            ResetTimerLockDoor();
             StartCoroutine(closestDoor.GetComponent<Door>().ActiveDoor());
         }
     }

@@ -8,7 +8,7 @@ public class Door : MonoBehaviour
 {
     int clickCount = 20;
     int maxClick = 20;
-    float timeDoor = 15;
+    float timeDoor = 12;
 
     [SerializeField] private TMP_Text countText;
     [SerializeField] private TMP_Text timeRemaningDoorText;

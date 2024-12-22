@@ -1858,8 +1858,7 @@ MonoBehaviour:
   rooms: []
   allDoors: []
   player: {fileID: 817573138483688170}
-  slider: {fileID: 684378138}
-  totalTime: 20
+  totalTime: 15
 --- !u!1 &1951162661
 GameObject:
   m_ObjectHideFlags: 0
