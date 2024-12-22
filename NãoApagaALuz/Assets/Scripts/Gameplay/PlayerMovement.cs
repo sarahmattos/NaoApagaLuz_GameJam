@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 using static SwitchBehauviour;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement")]
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
     public float mouseSensitivity = 2f;
@@ -13,15 +15,29 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity;
     private float verticalRotation = 0f;
 
+    [Header("Interact")]
     public float interactionRange = 8f; // Distância máxima para interagir
     public LayerMask interactableLayerDoors; // Layer dos objetos interativos
     public LayerMask interactableLayerSwitchs; // Layer dos objetos interativos
     public Camera playerCamera;
 
+    [Header("Stamina")]
+    public Slider staminaBar; // Referência à barra de estamina na UI
+    public float maxStamina = 100f; // Máxima estamina
+    public float stamina = 100f; // Estamina atual
+    public float staminaConsumptionRate = 40f; // Consumo de estamina por segundo ao correr
+    public float staminaRegenRate = 10f; // Regeneração de estamina por segundo
+    public float minStaminaToRun = 10f; // Estamina mínima para correr
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked; // Trava o cursor no centro da tela
+
+        if (staminaBar != null)
+        {
+            staminaBar.maxValue = maxStamina;
+            staminaBar.value = stamina;
+        }
     }
    
 
@@ -68,8 +84,19 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * horizontal + transform.forward * vertical;
 
-        // Verifica se o Shift está pressionado para correr
-        float speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+        bool isRunning = Input.GetKey(KeyCode.LeftShift) && stamina > minStaminaToRun;
+
+        // Define a velocidade de movimento com base na corrida e estamina
+        float speed = isRunning ? runSpeed : walkSpeed;
+
+        if (isRunning)
+        {
+            ConsumeStamina();
+        }
+        else
+        {
+            RegenerateStamina();
+        }
 
         // Move o personagem
         characterController.Move(move * speed * Time.deltaTime);
@@ -82,6 +109,29 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
+
+        // Atualiza a barra de estamina
+        UpdateStaminaBar();
+    }
+
+    void ConsumeStamina()
+    {
+        stamina -= staminaConsumptionRate * Time.deltaTime;
+        if (stamina < 0) stamina = 0; // Garante que a estamina não fique negativa
+    }
+
+    void RegenerateStamina()
+    {
+        stamina += staminaRegenRate * Time.deltaTime;
+        if (stamina > maxStamina) stamina = maxStamina; // Garante que a estamina não ultrapasse o máximo
+    }
+
+    void UpdateStaminaBar()
+    {
+        if (staminaBar != null)
+        {
+            staminaBar.value = stamina;
+        }
     }
 
     void RotatePlayerWithMouse()
