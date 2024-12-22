@@ -2271,7 +2271,7 @@ GameObject:
   - component: {fileID: 1904099157}
   - component: {fileID: 1904099156}
   - component: {fileID: 1904099155}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3100,7 +3100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1209775997095335078}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3464,7 +3464,7 @@ GameObject:
   - component: {fileID: 3450056641678072343}
   - component: {fileID: 1045225684340660243}
   - component: {fileID: 2106429949378724213}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3541,7 +3541,7 @@ GameObject:
   - component: {fileID: 6159835136760443527}
   - component: {fileID: 6159835136760443529}
   - component: {fileID: 6159835136760443528}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
