@@ -11,6 +11,21 @@ public class StateManager : MonoBehaviour
         buttonSwitch = gameObject.GetComponent<SwitchBehauviour>();
         SetState(SwitchState.ON);
     }
+    private void OnEnable()
+    {
+        if (SwitchsManager.Instance != null)
+        {
+            SwitchsManager.Instance.RegisterObject(this);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (SwitchsManager.Instance != null)
+        {
+            SwitchsManager.Instance.UnregisterObject(this);
+        }
+    }
     public void SetState(SwitchState newState)
     {
         if (newState == currentState) return;
@@ -23,13 +38,11 @@ public class StateManager : MonoBehaviour
         HandleStateChange();
     }
 
-    // Verifica se está no estado "Acesso"
     public bool IsAcesso()
     {
         return currentState == SwitchState.ON;
     }
 
-    // Executa ações baseadas no estado atual
     private void HandleStateChange()
     {
         switch (currentState)
@@ -38,12 +51,14 @@ public class StateManager : MonoBehaviour
 
                 buttonSwitch.SetLigthOn(IsAcesso());
                 Debug.Log("Objeto está no estado: Acesso");
+                SwitchsManager.Instance.CalculatePercent();
                 break;
 
             case SwitchState.OFF:
 
                 buttonSwitch.SetLigthOn(IsAcesso());
                 Debug.Log("Objeto está no estado: Apagado");
+                SwitchsManager.Instance.CalculatePercent();
                 break;
         }
     }
@@ -64,17 +79,5 @@ public class StateManager : MonoBehaviour
     {
         SwitchCurrentState();
     }
-    /* private void OnGUI()
-     {
-
-         {
-             GUILayout.BeginArea(new Rect(10, 10, 300, 300));
-             if (GUILayout.Button("Switch")) SwitchCurrentState();
-             if (GUILayout.Button("Acender"))SetState(SwitchState.ON);
-             if (GUILayout.Button("Apagar")) SetState(SwitchState.OFF);
-         }
-         GUILayout.EndArea();
-     }
-    */
 
 }
