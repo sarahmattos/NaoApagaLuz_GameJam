@@ -77,7 +77,8 @@ public class StateManager : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        SwitchCurrentState();
+        SetState(SwitchState.ON);
+        //SwitchCurrentState();
     }
 
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static SwitchBehauviour;
 using TMPro;
+using System.Collections;
 
 public class SwitchsManager : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class SwitchsManager : MonoBehaviour
         registeredObjects = new List<StateManager>(FindObjectsOfType<StateManager>());
         total = registeredObjects.Count;
         RandomizeStateSwitchs();
+        StartCoroutine(TurnOff());
     }
     public void CalculatePercent()
     {
@@ -123,4 +125,12 @@ public class SwitchsManager : MonoBehaviour
         
     }
    */
+   private IEnumerator TurnOff()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(2);
+            RandomizeStateSwitchs();
+        }
+    }
 }
