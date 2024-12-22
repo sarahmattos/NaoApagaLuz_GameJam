@@ -35,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
     private float timeElapsed = 0f;
     [SerializeField] GameObject gun;
 
+    [Header("TP")]
+    int idSort, oldSort;
+
     [Header("Stamina")]
     public Slider staminaBar; // Referência à barra de estamina na UI
     public float maxStamina = 100f; // Máxima estamina
@@ -54,6 +57,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
    
+    public void TeleportPlayer()
+    {
+        idSort = Random.Range(0, RoomsControl.Instance.rooms.Length);
+        while (idSort == oldSort)
+        {
+            idSort = Random.Range(0, RoomsControl.Instance.rooms.Length);
+        }
+        oldSort = idSort;
+        RoomController currentRoom = RoomsControl.Instance.ReturnTargetRoom(idSort);
+        characterController.enabled = false;
+        transform.position = RoomsControl.Instance.ReturnTargetRoom(idSort).transform.position;
+        characterController.enabled = true;
+    }
 
     void HandleInteraction()
     {
@@ -216,5 +232,27 @@ public class PlayerMovement : MonoBehaviour
         verticalRotation -= mouseY;
         verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f); // Limita a rotação vertical
         playerCamera.gameObject.transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
+    }
+    private void OnGUI()
+    {
+
+        {
+            GUILayout.BeginArea(new Rect(10, 10, 300, 300));
+            //if (GUILayout.Button("StartGame")) StartGame();
+            if (GUILayout.Button("Tp")) TeleportPlayer();
+        }
+        GUILayout.EndArea();
+
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("TP"))
+        {
+            if (other.gameObject.GetComponent<Teleport>().canPass)
+            {
+                TeleportPlayer();
+                other.gameObject.GetComponent<Teleport>().ResetTp();
+            }
+        }
     }
 }

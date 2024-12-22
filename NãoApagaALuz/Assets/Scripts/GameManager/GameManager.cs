@@ -13,16 +13,7 @@ public class GameManager : MonoBehaviour
        FindAnyObjectByType<IaController>().RandomizeTarget();
        FindAnyObjectByType<RegressiveCountdown>().StartCouroutineTime();
     }
-     private void OnGUI()
-   {
-
-       {
-           GUILayout.BeginArea(new Rect(10, 10, 300, 300));
-           if (GUILayout.Button("StartGame")) StartGame();
-       }
-       GUILayout.EndArea();
-
-   }
+ 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
