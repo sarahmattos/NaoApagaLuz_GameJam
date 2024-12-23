@@ -254,6 +254,14 @@ public class PlayerMovement : MonoBehaviour
                 TeleportPlayer();
                 other.gameObject.GetComponent<Teleport>().ResetTp();
             }
+            
+        }
+        if (other.gameObject.CompareTag("ScaryTrigger"))
+        {
+            Debug.Log("triggou");
+            other.gameObject.GetComponent<ScaryTrigger>().ActiveScary();
+
+
         }
     }
 }
