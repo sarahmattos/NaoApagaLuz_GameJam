@@ -15,6 +15,9 @@ public class IaController : MonoBehaviour
     private int currentLightIndex = 0;
     float speed;
 
+    [SerializeField] private float totalTime = 5f;
+    private float timeElapsed = 0f;
+
     public enum IaState
     {
         SearchRoom,
@@ -64,9 +67,19 @@ public class IaController : MonoBehaviour
 
     void Update()
     {
-        if (HasReachedDestination() && GameManager.instance.startedGame)
+        if (!GameManager.instance.startedGame) return;
+        if (HasReachedDestination())
         {
             DoSomething();
+        }
+        if (timeElapsed < totalTime)
+        {
+            timeElapsed += Time.deltaTime;
+        }
+        else
+        {
+            timeElapsed = 0;
+            TriggersController.instance.RandomizeTrigger();
         }
     }
 
