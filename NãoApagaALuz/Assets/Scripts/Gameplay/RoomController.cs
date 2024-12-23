@@ -6,6 +6,7 @@ public class RoomController : MonoBehaviour
 {
     public StateManager[] ligths;
     public GameObject door;
+    public Transform target;
     [SerializeField] private GameObject ligthParent;
     void Start()
     {

@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         oldSort = idSort;
         RoomController currentRoom = RoomsControl.Instance.ReturnTargetRoom(idSort);
         characterController.enabled = false;
-        transform.position = RoomsControl.Instance.ReturnTargetRoom(idSort).transform.position;
+        transform.position = RoomsControl.Instance.ReturnTargetRoom(idSort).target.position;
         characterController.enabled = true;
     }
 
@@ -94,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
                 if (currentSwitch != null)
                 {
                     currentSwitch.SetState(SwitchState.ON); // Executa a interação
+                    //currentSwitch.SwitchCurrentState();
                 }
             }
 

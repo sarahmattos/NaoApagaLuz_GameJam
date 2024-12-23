@@ -7,7 +7,6 @@ public class IaController : MonoBehaviour
 {
     public int idSort, oldSort;
     private NavMeshAgent navmesh;
-    public Transform TARGET;
     public IaState currentIaState = IaState.SearchRoom;
     public IaState previousIaState = IaState.SearchRoom;
     public RoomController currentRoom;
@@ -53,7 +52,6 @@ public class IaController : MonoBehaviour
     public void RandomizeTarget()
     {
         
-
         idSort = Random.Range(0, RoomsControl.Instance.rooms.Length);
         while (idSort == oldSort)
         {
@@ -61,7 +59,7 @@ public class IaController : MonoBehaviour
         }
         oldSort = idSort;
         currentRoom = RoomsControl.Instance.ReturnTargetRoom(idSort);
-        SetTarget(RoomsControl.Instance.ReturnTargetRoom(idSort).transform);
+        SetTarget(RoomsControl.Instance.ReturnTargetRoom(idSort).target);
     }
 
     void Update()
