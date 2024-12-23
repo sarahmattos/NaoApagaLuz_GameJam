@@ -37,7 +37,7 @@ public class RoomsControl : MonoBehaviour
         rooms = GetComponentsInChildren<RoomController>();
         foreach (RoomController go in rooms)
         {
-            allDoors.Add(go.door);
+            if(go.door!=null) allDoors.Add(go.door);
         }
     }
 
@@ -80,23 +80,38 @@ public class RoomsControl : MonoBehaviour
     }
     public void SearchNearstDoorFromPlayer()
     {
-        GameObject closestDoor = allDoors[0];
-        float distance = Vector3.Distance(player.transform.position, closestDoor.transform.position);
-        foreach (GameObject go in allDoors)
+        GameObject closestDoor = null;
+        float closestDistance = float.MaxValue;
+
+        foreach (GameObject door in allDoors)
         {
-            float aux = Vector3.Distance(player.transform.position, go.transform.position);
-            if (aux < distance)
+            
+            float distance3D = Vector3.Distance(player.transform.position, door.transform.position);
+
+           
+            float heightDifference = Mathf.Abs(player.transform.position.y - door.transform.position.y);
+
+           
+            if (heightDifference > 2.0f) 
             {
-                distance = aux;
-                closestDoor = go;
+                distance3D += heightDifference * 10.0f; 
             }
+
+            if (distance3D < closestDistance)
+            {
+                closestDistance = distance3D;
+                closestDoor = door;
+            }
+            Debug.Log("fechou porta "+ closestDoor.transform.parent.name);
         }
-        if (canCloseDoor)
+
+        if (closestDoor != null && canCloseDoor)
         {
             ResetTimerLockDoor();
             StartCoroutine(closestDoor.GetComponent<Door>().ActiveDoor());
         }
     }
-   
+
+
 
 }
