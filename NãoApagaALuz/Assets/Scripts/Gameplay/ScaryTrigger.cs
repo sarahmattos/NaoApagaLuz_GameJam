@@ -8,9 +8,14 @@ public class ScaryTrigger : MonoBehaviour
     bool canActive = false;
    public void ActiveScary()
     {
-        if (canActive) StartCoroutine(ScaryPrank());
-    }
-    private IEnumerator ScaryPrank()
+        if (canActive)
+        {
+            StartCoroutine(ScaryPrank());
+            Soundmanager.Instance.ScarySound();
+        }
+
+        }
+        private IEnumerator ScaryPrank()
     {
         Debug.Log("ativou");
         canActive = false;

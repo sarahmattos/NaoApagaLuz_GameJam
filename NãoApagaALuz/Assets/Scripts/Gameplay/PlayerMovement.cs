@@ -85,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
                 if (currentDoor != null)
                 {
                     currentDoor.OnInteract(); // Executa a interação
+                    Soundmanager.Instance.DoorSound();
                 }
             }
 
@@ -93,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
                 StateManager currentSwitch = switchHit.collider.GetComponent<StateManager>();
                 if (currentSwitch != null)
                 {
-                    currentSwitch.SetState(SwitchState.ON); // Executa a interação
+                    currentSwitch.SetState(SwitchState.ON,true); // Executa a interação
                     //currentSwitch.SwitchCurrentState();
                 }
             }
@@ -114,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     ResetSlider();
                 }
+                Soundmanager.Instance.HitSound();
             }
             
         }

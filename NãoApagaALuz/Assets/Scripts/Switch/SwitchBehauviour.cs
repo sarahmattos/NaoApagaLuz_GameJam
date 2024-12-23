@@ -26,55 +26,31 @@ public class SwitchBehauviour : MonoBehaviour
     }
 
 
-    public void SetLigthOn(bool stateOn)
+    public void SetLigthOn(bool stateOn, bool isPLayer)
     {
         //change de ligth in scene
         Ligth.GetComponent<LigthController>().SwitchState(stateOn);
 
         //handle interruptor
-        HandleInterruptor(stateOn);
+        HandleInterruptor(stateOn,isPLayer);
     }
 
-    public void HandleInterruptor(bool value)
+    public void HandleInterruptor(bool value, bool isPlayer)
     {
         if(value)
         {
             interruptor.GetComponent<MeshRenderer>().material = matOn;
-            // RotateInterruptor(-20f);
-            // interruptor.SetActive(false);
-            // Quaternion finalRotation = Quaternion.Euler(this.interruptor.transform.eulerAngles.x, -20f, this.interruptor.transform.eulerAngles.z);
             AnimSwitch.SetTrigger("On");
-
-           // this.interruptor.transform.rotation = finalRotation;
+            if(isPlayer) Soundmanager.Instance.ClickLigthOn();
         }
         else
         {
             interruptor.GetComponent<MeshRenderer>().material = matOff;
             AnimSwitch.SetTrigger("Off");
-            // RotateInterruptor(0);
+            if(isPlayer)Soundmanager.Instance.ClickLigthOff();
         }
 
     }
-    public void RotateInterruptor(float angle)
-    {
-            StartCoroutine(RotateToAngle(interruptor, angle, 1f)); // Rotaciona para -20° no eixo Y em 1 segundo
-    }
-
-    private IEnumerator RotateToAngle(GameObject target, float targetYRotation, float duration)
-    {
-        Quaternion initialRotation = target.transform.rotation; 
-        Quaternion finalRotation = Quaternion.Euler(target.transform.eulerAngles.x, targetYRotation, target.transform.eulerAngles.z); 
-
-        float elapsedTime = 0f;
-
-        while (elapsedTime < duration)
-        {
-            target.transform.rotation = Quaternion.Slerp(initialRotation, finalRotation, elapsedTime / duration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        target.transform.rotation = finalRotation;
-    }
+   
 
 }

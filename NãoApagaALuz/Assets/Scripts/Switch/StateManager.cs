@@ -26,18 +26,18 @@ public class StateManager : MonoBehaviour
             SwitchsManager.Instance.UnregisterObject(this);
         }
     }
-    public void SetState(SwitchState newState)
+    public void SetState(SwitchState newState, bool isPlayer=false)
     {
         Debug.Log("chegou aqui");
         if (newState == currentState) return;
         currentState = newState;
-        HandleStateChange();
+        HandleStateChange(isPlayer);
         Debug.Log(currentState +""+ newState);
     }
     public void SwitchCurrentState()
     {
         HandleStateSwitch();
-        HandleStateChange();
+       // HandleStateChange();
     }
 
     public bool IsAcesso()
@@ -45,19 +45,19 @@ public class StateManager : MonoBehaviour
         return currentState == SwitchState.ON;
     }
 
-    private void HandleStateChange()
+    private void HandleStateChange(bool isPlayer)
     {
         switch (currentState)
         {
             case SwitchState.ON:
 
-                buttonSwitch.SetLigthOn(true);
+                buttonSwitch.SetLigthOn(true, isPlayer);
                 SwitchsManager.Instance.CalculatePercent();
                 break;
 
             case SwitchState.OFF:
 
-                buttonSwitch.SetLigthOn(false);
+                buttonSwitch.SetLigthOn(false, isPlayer);
                 SwitchsManager.Instance.CalculatePercent();
                 break;
         }
