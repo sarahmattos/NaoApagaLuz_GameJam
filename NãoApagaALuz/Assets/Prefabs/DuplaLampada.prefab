@@ -128,12 +128,13 @@ GameObject:
   - component: {fileID: 6807276332564488259}
   - component: {fileID: 2755201048901153330}
   - component: {fileID: 8247565539423673017}
+  - component: {fileID: 3663170221993320835}
   m_Layer: 8
   m_Name: Interruptor_01.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2666465095865262397
 Transform:
@@ -143,13 +144,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895064931012273402}
   serializedVersion: 2
-  m_LocalRotation: {x: -1.1368678e-15, y: 2.2737367e-15, z: -1.8189894e-14, w: 1}
-  m_LocalPosition: {x: 0.000027517, y: 0.00004517973, z: 0.000018770541}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
+  m_LocalPosition: {x: 0.2799895, y: 0.00004650989, z: -0.4500006}
+  m_LocalScale: {x: 1.15, y: 1.15, z: 1.15}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2667295025747387541}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
 --- !u!33 &6807276332564488259
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -178,7 +179,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c46b09fd97248d640948948ca19b4b94, type: 2}
+  - {fileID: 2100000, guid: cfbcc0186a5160244a3904f97ed5da54, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -222,6 +223,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5039814586962436265, guid: 2501c7374ffae5946aad3d55a26bfd29, type: 3}
+--- !u!95 &3663170221993320835
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895064931012273402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d4d801879792eb4098736366047e16a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2399277111709453677
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +366,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &2667295025747387541
 Transform:
@@ -437,6 +459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47aed05f5308334e83392be609a48b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimSwitch: {fileID: 3663170221993320835}
+  matOn: {fileID: 2100000, guid: cfbcc0186a5160244a3904f97ed5da54, type: 2}
+  matOff: {fileID: 2100000, guid: c46b09fd97248d640948948ca19b4b94, type: 2}
   Ligth: {fileID: 2399277111709453677}
 --- !u!65 &8570219368938890457
 BoxCollider:
@@ -457,8 +482,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.2609336, y: 14.89685, z: 14.896778}
-  m_Center: {x: 1.6304805, y: 0, z: -0.0000014534342}
+  m_Size: {x: 4.837898, y: 14.89685, z: 14.896778}
+  m_Center: {x: 2.4189627, y: 0, z: -0.0000014534342}
 --- !u!1 &6172892850366830380
 GameObject:
   m_ObjectHideFlags: 0
