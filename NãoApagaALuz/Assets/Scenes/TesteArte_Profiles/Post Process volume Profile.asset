@@ -86,6 +86,34 @@ MonoBehaviour:
   vignette:
     overrideState: 0
     value: 0.5
+--- !u!114 &-3509427104262498531
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
+  m_Name: Grain
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  colored:
+    overrideState: 1
+    value: 1
+  intensity:
+    overrideState: 1
+    value: 0.112
+  size:
+    overrideState: 0
+    value: 1
+  lumContrib:
+    overrideState: 0
+    value: 0.8
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +133,7 @@ MonoBehaviour:
   - {fileID: 5967518433894195259}
   - {fileID: -4556036679089903701}
   - {fileID: 4698455246579423850}
+  - {fileID: -3509427104262498531}
 --- !u!114 &4698455246579423850
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -132,7 +161,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.467
+    value: 0.444
   smoothness:
     overrideState: 0
     value: 0.2
@@ -167,7 +196,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 2
+    value: 1
   threshold:
     overrideState: 1
     value: 0.3
@@ -270,7 +299,7 @@ MonoBehaviour:
     value: 0
   contrast:
     overrideState: 1
-    value: -15
+    value: -13
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -300,7 +329,7 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    value: {x: 1, y: 0.9978478, z: 0.98120296, w: 0}
   gamma:
     overrideState: 1
     value: {x: 0.7531778, y: 0.8311688, z: 1, w: 0}
@@ -1525,13 +1554,13 @@ MonoBehaviour:
     value: 1
   filtering:
     overrideState: 1
-    value: {x: 47.80382, y: 92.80386}
+    value: {x: 53.999954, y: 99}
   minLuminance:
     overrideState: 1
-    value: 3.5
+    value: 5
   maxLuminance:
     overrideState: 1
-    value: 9
+    value: 8
   keyValue:
     overrideState: 0
     value: 1
