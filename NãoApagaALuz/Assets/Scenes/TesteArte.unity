@@ -17097,6 +17097,8 @@ GameObject:
   - component: {fileID: 9021673578662989909}
   - component: {fileID: 2592102694410958578}
   - component: {fileID: 35666226}
+  - component: {fileID: 9021673578662989910}
+  - component: {fileID: 9021673578662989911}
   m_Layer: 10
   m_Name: Camera
   m_TagString: Untagged
@@ -18575,6 +18577,40 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &9021673578662989910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715631230841971740}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851d5c4e6ffbab940a0462ccd7a479f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ditherShader: {fileID: 4800000, guid: 3def5a2e3407cae4eb321c0c456fe16a, type: 3}
+  spread: 0.203
+  redColorCount: 6
+  greenColorCount: 6
+  blueColorCount: 6
+  bayerLevel: 1
+  downSamples: 1
+  pointFilterDown: 0
+--- !u!114 &9021673578662989911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715631230841971740}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62b3db54267ead9478a878356b48e20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pixelArtFilter: {fileID: 4800000, guid: 40f888868bff54e489d63cf2a046892c, type: 3}
+  downSamples: 1
 --- !u!1 &9032493869880836018
 GameObject:
   m_ObjectHideFlags: 0
