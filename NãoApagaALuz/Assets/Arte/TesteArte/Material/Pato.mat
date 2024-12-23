@@ -12,7 +12,6 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - TCP2_DISABLE_WRAPPED_LIGHT
   - TCP2_SPEC_TOON
   m_InvalidKeywords:
   - TCP2_RAMP_BANDS_CRISP
@@ -107,7 +106,7 @@ Material:
     - _FresnelMax: 1.5
     - _FresnelMin: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.228
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _IndirectIntensity: 1
     - _IndirectIntensityOutline: 0
@@ -119,6 +118,9 @@ Material:
     - _NormalsUVType: 0
     - _OcclusionChannel: 0
     - _OcclusionStrength: 1
+    - _Offset1: 0
+    - _Offset2: 0
+    - _Outline: 1
     - _OutlineLightingType: 0
     - _OutlineLightingTypeURP: 0
     - _OutlineMaxWidth: 1
@@ -156,10 +158,14 @@ Material:
     - _SpecularToonSmoothness: 0.05
     - _SpecularType: 0
     - _SrcBlend: 1
-    - _TCP2_DISABLE_WRAPPED_LIGHT: 1
+    - _TCP2_DISABLE_WRAPPED_LIGHT: 0
+    - _TCP2_OUTLINE_CONST_SIZE: 0
+    - _TCP2_OUTLINE_TEXTURED: 0
     - _TCP2_RAMPTEXT: 0
     - _TCP2_SPEC_TOON: 1
     - _TCP2_STYLIZED_FRESNEL: 0
+    - _TCP2_ZSMOOTH_ON: 0
+    - _TexLod: 5
     - _UVSec: 0
     - _UseAlphaTest: 0
     - _UseEmission: 0
@@ -175,6 +181,7 @@ Material:
     - _UseRimLightMask: 1
     - _UseShadowTexture: 0
     - _UseSpecular: 0
+    - _ZSmooth: -0.5
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
