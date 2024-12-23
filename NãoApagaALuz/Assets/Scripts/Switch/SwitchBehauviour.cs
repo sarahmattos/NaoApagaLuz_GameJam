@@ -23,8 +23,8 @@ public class SwitchBehauviour : MonoBehaviour
 
     public void SetLigthOn(bool stateOn)
     {
-        //AnimSwitch.gameObject.SetActive(stateOn);
-        Ligth.SetActive(stateOn);
+        
+        Ligth.GetComponent<LigthController>().SwitchState(stateOn);
     }
     
 }
