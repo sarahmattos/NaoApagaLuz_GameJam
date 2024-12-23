@@ -72,6 +72,10 @@ public class SwitchsManager : MonoBehaviour
     }
     public void RandomizeStateSwitchs()
     {
+        foreach (StateManager state in registeredObjects)
+        {
+            state.SetState(SwitchState.ON);
+        }
         List<int> randomId = new List<int>();
         float average = registeredObjects.Count / 2;
 

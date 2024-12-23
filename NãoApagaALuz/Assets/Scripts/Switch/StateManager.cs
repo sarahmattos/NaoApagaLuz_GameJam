@@ -9,7 +9,7 @@ public class StateManager : MonoBehaviour
     private void Start()
     {
         buttonSwitch = gameObject.GetComponent<SwitchBehauviour>();
-        SetState(SwitchState.ON);
+       
     }
     private void OnEnable()
     {

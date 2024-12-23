@@ -81,6 +81,7 @@ public class IaController : MonoBehaviour
             timeElapsed = 0;
             TriggersController.instance.RandomizeTrigger();
         }
+       
     }
 
     private void DoSomething()

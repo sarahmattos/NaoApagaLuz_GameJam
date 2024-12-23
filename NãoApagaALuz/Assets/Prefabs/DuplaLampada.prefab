@@ -321,7 +321,6 @@ GameObject:
   - component: {fileID: 750423886831002904}
   - component: {fileID: 1246958329971308584}
   - component: {fileID: 4470174808084334758}
-  - component: {fileID: 3369912178269884045}
   - component: {fileID: 8570219368938890457}
   m_Layer: 8
   m_Name: Interruptor_01.002 (1)
@@ -422,28 +421,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ligth: {fileID: 2399277111709453677}
---- !u!64 &3369912178269884045
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2969087990643033018}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3547520146882970698, guid: 2501c7374ffae5946aad3d55a26bfd29, type: 3}
 --- !u!65 &8570219368938890457
 BoxCollider:
   m_ObjectHideFlags: 0
