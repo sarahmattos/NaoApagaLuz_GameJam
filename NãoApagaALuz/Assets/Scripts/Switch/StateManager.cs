@@ -28,9 +28,11 @@ public class StateManager : MonoBehaviour
     }
     public void SetState(SwitchState newState)
     {
+        Debug.Log("chegou aqui");
         if (newState == currentState) return;
         currentState = newState;
         HandleStateChange();
+        Debug.Log(currentState +""+ newState);
     }
     public void SwitchCurrentState()
     {
@@ -49,13 +51,13 @@ public class StateManager : MonoBehaviour
         {
             case SwitchState.ON:
 
-                buttonSwitch.SetLigthOn(IsAcesso());
+                buttonSwitch.SetLigthOn(true);
                 SwitchsManager.Instance.CalculatePercent();
                 break;
 
             case SwitchState.OFF:
 
-                buttonSwitch.SetLigthOn(IsAcesso());
+                buttonSwitch.SetLigthOn(false);
                 SwitchsManager.Instance.CalculatePercent();
                 break;
         }
