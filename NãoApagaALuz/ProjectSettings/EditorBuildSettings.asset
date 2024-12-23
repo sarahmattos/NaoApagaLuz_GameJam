@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OnlineTest2.unity
     guid: 1000d955f6a74d8408ce4f946065f216
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1b2035817d01ac74296f91922db4b356
   m_configObjects: {}

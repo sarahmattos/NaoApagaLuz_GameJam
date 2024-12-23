@@ -32,6 +32,7 @@ public class RegressiveCountdown : MonoBehaviour
         remainingTime = 0;
         UpdateTimerText();
         Debug.Log("Contagem regressiva finalizada!");
+        GameManager.instance.FinishGame();
     }
 
     private void UpdateTimerText()

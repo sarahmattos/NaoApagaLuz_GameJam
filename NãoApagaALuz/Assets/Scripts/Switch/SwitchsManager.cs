@@ -13,10 +13,12 @@ public class SwitchsManager : MonoBehaviour
     // Singleton para acesso global (opcional)
     public static SwitchsManager Instance;
     private float total;
+    float ligthScore;
+    float darkScore;
 
     #region Ui
 
-    [SerializeField] Slider ligthSlider;
+[SerializeField] Slider ligthSlider;
     [SerializeField] TMP_Text ligthScoreText;
     [SerializeField] TMP_Text darkScoreText;
 
@@ -59,16 +61,22 @@ public class SwitchsManager : MonoBehaviour
         percent = (float)countOn / total * 100;
         UpdateScore(percent);
     }
+    public bool WinCondition()
+    {
+       return  (ligthScore > darkScore)? true : false; 
+    }
     public void UpdateScore(float percent)
     {
         float decimalPercent = percent / 100;
 
         ligthSlider.value = decimalPercent;
-        float ligthScore = Mathf.RoundToInt(percent); 
-        float darkScore = 100 - ligthScore;
+         ligthScore = Mathf.RoundToInt(percent); 
+         darkScore = 100 - ligthScore;
 
         ligthScoreText.text= ligthScore.ToString();
         darkScoreText.text= darkScore.ToString();
+        if (!GameManager.instance.startedGame) return;
+        if(darkScore==100||ligthScore==100)GameManager.instance.FinishGame();
     }
     public void RandomizeStateSwitchs()
     {
@@ -93,6 +101,8 @@ public class SwitchsManager : MonoBehaviour
         {
             IniciateOffEspecificSwitch(randomId[j]);
         }
+
+      GameManager.instance.startedGame = true;
     }
 
    public void IniciateOffEspecificSwitch(int id)
