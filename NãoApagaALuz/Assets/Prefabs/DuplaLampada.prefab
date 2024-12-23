@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4169239404531701693
 Transform:
@@ -127,7 +127,8 @@ GameObject:
   - component: {fileID: 2666465095865262397}
   - component: {fileID: 6807276332564488259}
   - component: {fileID: 2755201048901153330}
-  m_Layer: 0
+  - component: {fileID: 8247565539423673017}
+  m_Layer: 8
   m_Name: Interruptor_01.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,6 +200,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8247565539423673017
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895064931012273402}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5039814586962436265, guid: 2501c7374ffae5946aad3d55a26bfd29, type: 3}
 --- !u!1 &2399277111709453677
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +319,11 @@ GameObject:
   - component: {fileID: 2667295025747387541}
   - component: {fileID: 2551080612660228168}
   - component: {fileID: 750423886831002904}
-  m_Layer: 0
+  - component: {fileID: 1246958329971308584}
+  - component: {fileID: 4470174808084334758}
+  - component: {fileID: 3369912178269884045}
+  - component: {fileID: 8570219368938890457}
+  m_Layer: 8
   m_Name: Interruptor_01.002 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,6 +396,75 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1246958329971308584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2969087990643033018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b02b5cd125db04db8e47f6226dac76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 1
+--- !u!114 &4470174808084334758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2969087990643033018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47aed05f5308334e83392be609a48b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ligth: {fileID: 2399277111709453677}
+--- !u!64 &3369912178269884045
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2969087990643033018}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3547520146882970698, guid: 2501c7374ffae5946aad3d55a26bfd29, type: 3}
+--- !u!65 &8570219368938890457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2969087990643033018}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2609336, y: 14.89685, z: 14.896778}
+  m_Center: {x: 1.6304805, y: 0, z: -0.0000014534342}
 --- !u!1 &6172892850366830380
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +480,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2433042500112506696
 Transform:
