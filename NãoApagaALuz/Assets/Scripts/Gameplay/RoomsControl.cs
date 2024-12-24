@@ -44,6 +44,7 @@ public class RoomsControl : MonoBehaviour
     void Update()
     {
         if (!GameManager.instance.startedGame) return;
+        //door closed system
         if (timeElapsed < totalTime)
         {
             timeElapsed += Time.deltaTime;

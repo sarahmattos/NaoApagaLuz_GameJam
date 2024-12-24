@@ -127,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
 
         HandleInteraction();
         if (!GameManager.instance.startedGame) return;
+        //gun system
         if (sliderStunn.value < 1f)
         {
             timeElapsed += Time.deltaTime;  

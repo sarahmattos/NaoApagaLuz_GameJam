@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour
     float timeStart = 6;
     public void StartGame()
     {
-        startedGame = true;
-        FindAnyObjectByType<IaController>().RandomizeTarget();
-       FindAnyObjectByType<RegressiveCountdown>().StartCouroutineTime();
+        startedGame = true;//load gun, load tp, move player, loock doors power countincrease, checkFinalGame, ia check target reached
+        FindAnyObjectByType<IaController>().RandomizeTarget();//ia started
+        FindAnyObjectByType<RegressiveCountdown>().StartCouroutineTime();//regressivecountstarted
 
     }
 
@@ -34,14 +34,14 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(TimeToStart());
             });
 
-            
+            //call fade in and fade out to call regressive started coutdowns. betwwen that call things
         }
     }
     public void ThingsToDoToStartGame()
     {
         SwitchsManager.Instance.RandomizeStateSwitchs();
         uiGame.gameObject.SetActive(true);
-        //mudar a camera e o pato
+        //mudar a camera e o pato, active ui, randomize switchs
     }
     private void Start()
     {
