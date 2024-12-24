@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public bool startedGame = false;
+    public bool mmoveCamerae = false;
     public static GameManager instance;
     [SerializeField] private  GameObject winPanel;
     [SerializeField] private  GameObject loosePanel;
     [SerializeField] private  GameObject uiGame;
+    [SerializeField] private  GameObject tutorial;
 
     [SerializeField] private TMP_Text timeRemaningStartText;
 
@@ -39,8 +41,11 @@ public class GameManager : MonoBehaviour
     }
     public void ThingsToDoToStartGame()
     {
+        mmoveCamerae = true;
         SwitchsManager.Instance.RandomizeStateSwitchs();
         uiGame.gameObject.SetActive(true);
+        tutorial.gameObject.SetActive(false);
+        FindAnyObjectByType<PlayerMovement>().Camera.SetActive(true);
         //mudar a camera e o pato, active ui, randomize switchs
     }
     private void Start()

@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController characterController;
     private Vector3 velocity;
     private float verticalRotation = 0f;
+    [SerializeField] public GameObject Camera;
 
     [Header("Interact")]
     public float interactionRange = 8f; // Distância máxima para interagir
@@ -123,10 +124,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovePlayer();
-        RotatePlayerWithMouse();
 
         HandleInteraction();
+        if (GameManager.instance.mmoveCamerae) RotatePlayerWithMouse();
+
         if (!GameManager.instance.startedGame) return;
+
         //gun system
         if (sliderStunn.value < 1f)
         {
