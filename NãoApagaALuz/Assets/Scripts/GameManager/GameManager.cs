@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private  GameObject loosePanel;
     [SerializeField] private  GameObject uiGame;
     [SerializeField] private  GameObject tutorial;
+    [SerializeField] private  GameObject tutorialUi;
 
     [SerializeField] private TMP_Text timeRemaningStartText;
 
@@ -31,12 +32,15 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            FadeCutscene.Instance.FadeIn(true, () =>
+            if (Dialogue.instance.HandleDialogue())
             {
-                StartCoroutine(TimeToStart());
-            });
+                // Após o diálogo, inicia o fade e outras ações
+                FadeCutscene.Instance.FadeIn(true, () =>
+                {
+                    StartCoroutine(TimeToStart());
+                });
+            }
 
-            //call fade in and fade out to call regressive started coutdowns. betwwen that call things
         }
     }
     public void ThingsToDoToStartGame()
@@ -45,6 +49,7 @@ public class GameManager : MonoBehaviour
         SwitchsManager.Instance.RandomizeStateSwitchs();
         uiGame.gameObject.SetActive(true);
         tutorial.gameObject.SetActive(false);
+        tutorialUi.gameObject.SetActive(false);
         FindAnyObjectByType<PlayerMovement>().Camera.SetActive(true);
         //mudar a camera e o pato, active ui, randomize switchs
     }
