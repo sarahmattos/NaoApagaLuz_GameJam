@@ -167,39 +167,51 @@ public class PlayerMovement : MonoBehaviour
     void MovePlayer()
     {
         // Movimento do jogador
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * horizontal + transform.forward * vertical;
 
-        bool isRunning = Input.GetKey(KeyCode.LeftShift) && stamina > minStaminaToRun;
-
-        // Define a velocidade de movimento com base na corrida e estamina
-        float speed = isRunning ? runSpeed : walkSpeed;
-
-        if (isRunning)
+        if (!GameManager.instance.startedGame)
         {
-            ConsumeStamina();
+            float speed = 0;
+            characterController.Move(move * speed * Time.deltaTime);
         }
         else
         {
-            RegenerateStamina();
+           
+
+            bool isRunning = Input.GetKey(KeyCode.LeftShift) && stamina > minStaminaToRun;
+
+            // Define a velocidade de movimento com base na corrida e estamina
+            float speed = isRunning ? runSpeed : walkSpeed;
+
+            if (isRunning)
+            {
+                ConsumeStamina();
+            }
+            else
+            {
+                RegenerateStamina();
+            }
+
+            // Move o personagem
+            characterController.Move(move * speed * Time.deltaTime);
+
+            // Aplica gravidade
+            if (characterController.isGrounded && velocity.y < 0)
+            {
+                velocity.y = -2f; // Reseta a velocidade quando no chão
+            }
+
+            velocity.y += gravity * Time.deltaTime;
+            characterController.Move(velocity * Time.deltaTime);
+
+            // Atualiza a barra de estamina
+            UpdateStaminaBar();
         }
-
-        // Move o personagem
-        characterController.Move(move * speed * Time.deltaTime);
-
-        // Aplica gravidade
-        if (characterController.isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f; // Reseta a velocidade quando no chão
-        }
-
-        velocity.y += gravity * Time.deltaTime;
-        characterController.Move(velocity * Time.deltaTime);
-
-        // Atualiza a barra de estamina
-        UpdateStaminaBar();
+           
     }
 
     void ConsumeStamina()

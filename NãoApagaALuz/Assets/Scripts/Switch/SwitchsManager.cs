@@ -102,7 +102,6 @@ public class SwitchsManager : MonoBehaviour
             IniciateOffEspecificSwitch(randomId[j]);
         }
 
-      GameManager.instance.startedGame = true;
     }
 
    public void IniciateOffEspecificSwitch(int id)
