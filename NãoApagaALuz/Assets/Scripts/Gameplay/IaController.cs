@@ -14,6 +14,8 @@ public class IaController : MonoBehaviour
     public List<StateManager> ligthsOn = new List<StateManager>();
     private int currentLightIndex = 0;
     float speed;
+    [SerializeField] Material stunnedMat;
+    [SerializeField] Material defaultMat;
 
     [SerializeField] private float totalTime = 5f;
     private float timeElapsed = 0f;
@@ -34,9 +36,11 @@ public class IaController : MonoBehaviour
         previousIaState = currentIaState;
         currentIaState = IaState.Stunned;
         navmesh.speed = 0;
+       transform.GetChild(0).GetComponent<MeshRenderer>().material = stunnedMat;
         yield return new WaitForSeconds(v);
         currentIaState = previousIaState;
         navmesh.speed = speed;
+        transform.GetChild(0).GetComponentInChildren<MeshRenderer>().material = defaultMat;
     }
     void Start()
     {

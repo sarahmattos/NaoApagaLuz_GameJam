@@ -236,17 +236,7 @@ public class PlayerMovement : MonoBehaviour
         verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f); // Limita a rotação vertical
         playerCamera.gameObject.transform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
     }
-    private void OnGUI()
-    {
-
-        {
-            GUILayout.BeginArea(new Rect(10, 10, 300, 300));
-            //if (GUILayout.Button("StartGame")) StartGame();
-            if (GUILayout.Button("Tp")) TeleportPlayer();
-        }
-        GUILayout.EndArea();
-
-    }
+  
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("TP"))

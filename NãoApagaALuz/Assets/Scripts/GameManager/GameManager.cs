@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour
     {
         FindAnyObjectByType<CharacterController>().enabled = false;
         Time.timeScale = 0.0f;
-        Cursor.lockState = CursorLockMode.None; // Trava o cursor no centro da tela
-        Cursor.visible = true; // Trava o cursor no centro da tela
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true; 
         GameObject aux = null;
         aux = SwitchsManager.Instance.WinCondition() ? winPanel : loosePanel;
         aux.SetActive(true);
@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     }
     public void Backmenu()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("MainMenu");
     }
 
