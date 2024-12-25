@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TMP_Text timeRemaningStartText;
 
+    [SerializeField]public GameObject scaryUI;
+
     private float timeStartRemaining;
 
     float timeStart = 6;

@@ -19,11 +19,19 @@ public class Soundmanager : MonoBehaviour
     }
     public void ClickLigthOn() => PlaySound(_click);
     public void ClickLigthOff() => PlaySound(_clickoff);
-    public void ScarySound()
+    public void ScarySound(bool value=true)
     {
-        PlaySound(_scary[currentId]);
-        currentId++;
-        if(currentId >= _scary.Length) currentId = 0;
+        if (value)
+        {
+            PlaySound(_scary[currentId]);
+            currentId++;
+            if (currentId >= _scary.Length) currentId = 0;
+        }
+        else
+        {
+           // m_AudioSource.Stop();
+        }
+       
     }
     public void HitSound() => PlaySound(_hit);
     public void DoorSound() => PlaySound(_door);

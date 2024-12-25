@@ -19,9 +19,12 @@ public class ScaryTrigger : MonoBehaviour
     {
         Debug.Log("ativou");
         canActive = false;
-        scaryObject.SetActive(true);
-        yield return new WaitForSeconds(2);
-        scaryObject.SetActive(false);
+        GameManager.instance.scaryUI.SetActive(true);
+        // scaryObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        GameManager.instance.scaryUI.SetActive(false);
+        Soundmanager.Instance.ScarySound(false) ;
+        //scaryObject.SetActive(false);
     }
     public void SetBoolActive()
     {
