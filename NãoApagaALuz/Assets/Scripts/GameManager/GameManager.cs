@@ -73,8 +73,10 @@ public class GameManager : MonoBehaviour
         //Time.timeScale = 0.0f;
         string nextScene = "";
         nextScene = SwitchsManager.Instance.WinCondition() ? "Victory" : "Defeat";
-        
+
         //aux.SetActive(true);
+        timeRemaningStartText.text = nextScene;
+        timeRemaningStartText.gameObject.SetActive(true);
         FadeCutscene.Instance.FadeIn(false, () =>
         {
             GoScene(nextScene);

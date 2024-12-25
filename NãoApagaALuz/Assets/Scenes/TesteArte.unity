@@ -29517,7 +29517,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.00007243897, y: 0}
-  m_SizeDelta: {x: 800, y: 50}
+  m_SizeDelta: {x: 2214.56, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1767657927
 MonoBehaviour:
@@ -29590,7 +29590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -29617,8 +29617,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 200
-  m_fontSizeBase: 200
+  m_fontSize: 150
+  m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -34500,7 +34500,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6cd5fec476a98944da362ba243a4cd88, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.171
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -38134,7 +38134,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 3019942373
-  m_fontColor: {r: 0.8980392, g: 0.6627451, b: 0, a: 0.7058824}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.7058824}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -38212,7 +38212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -16.59998}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!23 &1710395189464663395
@@ -40322,8 +40322,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000030517578, y: -21.835001}
+  m_SizeDelta: {x: 0, y: -43.669994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &3290110995744598398
 Transform:
@@ -41582,6 +41582,9 @@ MonoBehaviour:
   timerText: {fileID: 6891099099657252538}
   startMinutes: 1
   startSeconds: 0
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  warningColor: {r: 1, g: 0, b: 0, a: 1}
+  warningTime: 10
 --- !u!1 &4190108720455663303
 GameObject:
   m_ObjectHideFlags: 0
@@ -45013,8 +45016,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ebb2c0938eac4144fa330d983a7dc71a, type: 2}
+  m_sharedMaterial: {fileID: 3640565281491679387, guid: ebb2c0938eac4144fa330d983a7dc71a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -45038,8 +45041,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -45877,7 +45880,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f4d9fc4ef689a0e4f82852e4427c80ea, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.513
+  m_Volume: 0.659
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -46299,8 +46302,8 @@ MonoBehaviour:
   CharactersPerDuration: 0
   Gradient:
     serializedVersion: 2
-    key0: {r: 0.26235628, g: 0.8962264, b: 0.19023676, a: 1}
-    key1: {r: 0.4410492, g: 0.745283, b: 0.2988163, a: 1}
+    key0: {r: 0.8980393, g: 0.6627451, b: 0, a: 1}
+    key1: {r: 0.8980393, g: 0.6627451, b: 0, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -47552,7 +47555,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 3019899135
-  m_fontColor: {r: 1, g: 0, b: 0, a: 0.7058824}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.7058824}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -47630,8 +47633,8 @@ MonoBehaviour:
   CharactersPerDuration: 0
   Gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0.76019466, b: 0, a: 1}
-    key1: {r: 0.5849056, g: 0.43345168, b: 0.1738163, a: 1}
+    key0: {r: 1, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0, b: 0, a: 1}
     key2: {r: 0.1764706, g: 0.14901961, b: 0.10196079, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
