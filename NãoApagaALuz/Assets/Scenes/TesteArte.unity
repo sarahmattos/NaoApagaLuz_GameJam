@@ -2304,9 +2304,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5927983037392248977}
     m_Modifications:
+    - target: {fileID: 920638264636152806, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1002891058764420253, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.053926
+      value: 5.054
       objectReference: {fileID: 0}
     - target: {fileID: 1002891058764420253, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2314,7 +2318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1002891058764420253, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.764
+      value: 0.746
       objectReference: {fileID: 0}
     - target: {fileID: 1002891058764420253, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2351,6 +2355,10 @@ PrefabInstance:
     - target: {fileID: 1674511765957110767, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065534815357721559, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10700,7 +10708,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648875955}
   m_LocalRotation: {x: -0.5297058, y: 0.4925238, z: 0.47731572, w: -0.4990007}
-  m_LocalPosition: {x: 0, y: 0, z: -5.65}
+  m_LocalPosition: {x: 0, y: 0, z: -5.973}
   m_LocalScale: {x: 0.102198526, y: 0.102198526, z: 0.10219853}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10708,7 +10716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 3.352, y: 267.34, z: -90.966}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.952, y: -16.18}
+  m_AnchoredPosition: {x: -1.937, y: -16.174}
   m_SizeDelta: {x: 30.5698, y: 29.3478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648875957
@@ -32591,6 +32599,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5927983037392248977}
     m_Modifications:
+    - target: {fileID: 920638264636152806, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1002891058764420253, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.008715724
@@ -32650,6 +32662,10 @@ PrefabInstance:
     - target: {fileID: 1674511765957110767, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065534815357721559, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38294,6 +38310,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5927983037392248977}
     m_Modifications:
+    - target: {fileID: 920638264636152806, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 920638264636152806, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1002891058764420253, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.053926
@@ -38341,6 +38365,14 @@ PrefabInstance:
     - target: {fileID: 1674511765957110767, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065534815357721559, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065534815357721559, guid: dae481ea64bf6464597845e3a3621f19, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
