@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TMP_Text timeRemaningStartText;
 
-    [SerializeField]public GameObject scaryUI;
+    [SerializeField]public GameObject[] scaryUI;
 
     private float timeStartRemaining;
 
@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
         tutorial.gameObject.SetActive(false);
         tutorialUi.gameObject.SetActive(false);
         FindAnyObjectByType<PlayerMovement>().Camera.SetActive(true);
+        Soundmanager.Instance.MusicPLay();
         //mudar a camera e o pato, active ui, randomize switchs
     }
     private void Start()
@@ -70,9 +71,6 @@ public class GameManager : MonoBehaviour
     {
         FindAnyObjectByType<CharacterController>().enabled = false;
         //Time.timeScale = 0.0f;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true; 
-        GameObject aux = null;
         string nextScene = "";
         nextScene = SwitchsManager.Instance.WinCondition() ? "Victory" : "Defeat";
         
@@ -84,6 +82,7 @@ public class GameManager : MonoBehaviour
     }
     public void GoScene(string nextScene)
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(nextScene);
     }
   

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Soundmanager : MonoBehaviour
 {
     [SerializeField] private AudioSource m_AudioSource;
+    [SerializeField] private AudioSource music_AudioSource;
     [SerializeField] private AudioClip _click;
     [SerializeField] private AudioClip _clickoff;
     [SerializeField] private AudioClip[] _scary;
@@ -19,6 +20,10 @@ public class Soundmanager : MonoBehaviour
     }
     public void ClickLigthOn() => PlaySound(_click);
     public void ClickLigthOff() => PlaySound(_clickoff);
+    public void MusicPLay()
+    {
+        music_AudioSource.Play();
+    }
     public void ScarySound(bool value=true)
     {
         if (value)

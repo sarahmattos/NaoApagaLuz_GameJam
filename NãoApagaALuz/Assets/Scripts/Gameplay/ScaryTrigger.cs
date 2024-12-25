@@ -17,12 +17,14 @@ public class ScaryTrigger : MonoBehaviour
         }
         private IEnumerator ScaryPrank()
     {
-        Debug.Log("ativou");
+
+        int id = Random.Range(0, GameManager.instance.scaryUI.Length);
         canActive = false;
-        GameManager.instance.scaryUI.SetActive(true);
+        GameManager.instance.scaryUI[id].SetActive(true);
         // scaryObject.SetActive(true);
         yield return new WaitForSeconds(0.5f);
-        GameManager.instance.scaryUI.SetActive(false);
+
+        GameManager.instance.scaryUI[id].SetActive(false);
         Soundmanager.Instance.ScarySound(false) ;
         //scaryObject.SetActive(false);
     }
