@@ -156,7 +156,7 @@
     "m_ShaderOutputName": "Center",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 1.0,
+        "x": 1.3300000429153443,
         "y": 200.0
     },
     "m_DefaultValue": {
@@ -907,10 +907,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -738.0,
-            "y": 237.0,
+            "x": -825.0,
+            "y": 272.0,
             "width": 208.0,
-            "height": 337.00006103515627
+            "height": 337.0
         }
     },
     "m_Slots": [
