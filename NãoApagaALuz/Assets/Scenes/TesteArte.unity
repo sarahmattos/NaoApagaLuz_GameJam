@@ -20150,19 +20150,19 @@ MonoBehaviour:
   CharactersPerDuration: 0
   Gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
-    key2: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 1, g: 0.28719693, b: 0, a: 1}
+    key1: {r: 1, g: 0.8279877, b: 0, a: 1}
+    key2: {r: 0, g: 1, b: 0.083981514, a: 0}
+    key3: {r: 0, g: 0.013520718, b: 1, a: 0}
+    key4: {r: 1, g: 0.6443301, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 34310
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
+    ctime1: 19082
+    ctime2: 34310
+    ctime3: 53199
+    ctime4: 65535
     ctime5: 0
     ctime6: 0
     ctime7: 0
@@ -20176,7 +20176,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: 0
-    m_NumColorKeys: 3
+    m_NumColorKeys: 5
     m_NumAlphaKeys: 2
   Mix: 0
   AutoPlay: 1
@@ -22494,7 +22494,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pato Urso
+  m_text: Bear Duck
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -37106,7 +37106,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 3036676095
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.7058824}
+  m_fontColor: {r: 0.8980392, g: 0.6627451, b: 0, a: 0.7058824}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -40252,14 +40252,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5561499099526704685}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -1.96, y: 1.44, z: -23.33}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1465962356}
   m_Father: {fileID: 5073997320674221741}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!224 &3890648504876970724
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42850,7 +42850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6249411599175870766
 Transform:
   m_ObjectHideFlags: 0
@@ -46163,7 +46163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.39879227, b: 1, a: 1}
+  m_Color: {r: 0.8980392, g: 0.6627451, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -46491,7 +46491,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 3036676095
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.7058824}
+  m_fontColor: {r: 1, g: 0, b: 0, a: 0.7058824}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

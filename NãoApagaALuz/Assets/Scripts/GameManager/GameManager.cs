@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private  GameObject tutorial;
     [SerializeField] private  GameObject tutorialUi;
 
+    bool hasCallEndDialogue = false;
+
     [SerializeField] private TMP_Text timeRemaningStartText;
 
     private float timeStartRemaining;
@@ -35,10 +37,15 @@ public class GameManager : MonoBehaviour
             if (Dialogue.instance.HandleDialogue())
             {
                 // Após o diálogo, inicia o fade e outras ações
-                FadeCutscene.Instance.FadeIn(true, () =>
+                if (!hasCallEndDialogue)
                 {
-                    StartCoroutine(TimeToStart());
-                });
+                    hasCallEndDialogue = true;
+                    FadeCutscene.Instance.FadeIn(true, () =>
+                    {
+                        StartCoroutine(TimeToStart());
+                    });
+                }
+               
             }
 
         }
