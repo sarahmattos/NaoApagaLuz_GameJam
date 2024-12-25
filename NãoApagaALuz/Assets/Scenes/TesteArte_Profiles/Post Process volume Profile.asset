@@ -328,14 +328,14 @@ MonoBehaviour:
     overrideState: 0
     value: 100
   lift:
-    overrideState: 0
-    value: {x: 1, y: 0.9978478, z: 0.98120296, w: 0}
+    overrideState: 1
+    value: {x: 1, y: 0.9650835, z: 0.97881013, w: 0}
   gamma:
     overrideState: 1
-    value: {x: 0.7531778, y: 0.8311688, z: 1, w: 0}
+    value: {x: 0.98155516, y: 0.9913185, z: 1, w: 0}
   gain:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 1, y: 0.96179235, z: 0.993249, w: 0}
   masterCurve:
     overrideState: 0
     value:
@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f6f3f7c722b4544b97e3c75840aa33, type: 3}
   m_Name: AutoExposure
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1557,7 +1557,7 @@ MonoBehaviour:
     value: {x: 53.999954, y: 99}
   minLuminance:
     overrideState: 1
-    value: 2.3
+    value: 2
   maxLuminance:
     overrideState: 1
     value: 9
