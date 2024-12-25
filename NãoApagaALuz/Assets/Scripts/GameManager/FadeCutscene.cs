@@ -67,7 +67,11 @@ public class FadeCutscene : MonoBehaviour
         {
             onComplete?.Invoke();
         }
-        if(!callFadeOut && endAlpha == 1f) if (FinishManager.instance != null) FinishManager.instance.ThingsToDoToStartGame();
+        if (!callFadeOut && endAlpha == 1f)
+        {  
+            onComplete?.Invoke();
+
+        }
     }
-    
-}
+
+    }

@@ -69,14 +69,24 @@ public class GameManager : MonoBehaviour
     public void FinishGame()
     {
         FindAnyObjectByType<CharacterController>().enabled = false;
-        Time.timeScale = 0.0f;
+        //Time.timeScale = 0.0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true; 
         GameObject aux = null;
-        aux = SwitchsManager.Instance.WinCondition() ? winPanel : loosePanel;
-        aux.SetActive(true);
-
+        string nextScene = "";
+        nextScene = SwitchsManager.Instance.WinCondition() ? "Victory" : "Defeat";
+        
+        //aux.SetActive(true);
+        FadeCutscene.Instance.FadeIn(false, () =>
+        {
+            GoScene(nextScene);
+        });
     }
+    public void GoScene(string nextScene)
+    {
+        SceneManager.LoadScene(nextScene);
+    }
+  
     public void Backmenu()
     {
         Time.timeScale = 1.0f;

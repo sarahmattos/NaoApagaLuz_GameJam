@@ -31,6 +31,7 @@ public class FinishManager : MonoBehaviour
                     hasCallEndDialogue = true;
                     FadeCutscene.Instance.FadeIn(false, () =>
                     {
+                        ThingsToDoToStartGame();
                     });
                     Debug.Log("acabou");
                 }
