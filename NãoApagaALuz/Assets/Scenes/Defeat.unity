@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5683,8 +5683,8 @@ MonoBehaviour:
   CharactersPerDuration: 0
   Gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0.28719693, b: 0, a: 1}
-    key1: {r: 1, g: 0.8279877, b: 0, a: 1}
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 1, b: 0.083981514, a: 0}
     key3: {r: 0, g: 0.013520718, b: 1, a: 0}
     key4: {r: 1, g: 0.6443301, b: 0, a: 0}
@@ -5692,7 +5692,7 @@ MonoBehaviour:
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 19082
+    ctime1: 65535
     ctime2: 34310
     ctime3: 53199
     ctime4: 65535
@@ -5709,7 +5709,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: 0
-    m_NumColorKeys: 5
+    m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   Mix: 0
   AutoPlay: 1
@@ -5737,8 +5737,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hello
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ebb2c0938eac4144fa330d983a7dc71a, type: 2}
+  m_sharedMaterial: {fileID: 3640565281491679387, guid: ebb2c0938eac4144fa330d983a7dc71a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5762,8 +5762,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6429,8 +6429,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts:
-  - teste
-  - teste 2
+  - I believe you know what comes next, sweetheart.
+  - "Close your eyes. I\u2019ll be here with you\u2014always, always, always."
+  - "This pain will end, and we\u2019ll be together forever. Just you and me."
   dialogueText: {fileID: 77284221}
   typingSpeed: 0.05
   currentTextIndex: -1
@@ -7284,43 +7285,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.84
+      value: -0.87477016
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.48
+      value: 0.4329462
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.82
+      value: 11.196002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.39233428
+      value: -0.15756048
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.58828044
+      value: -0.2139118
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.39233428
+      value: 0.69761825
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.58828044
+      value: -0.66539115
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 112.6
+      value: 95.26199
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
+      value: 315.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 104.52
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_CastShadows
@@ -17245,11 +17246,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ditherShader: {fileID: 4800000, guid: 3def5a2e3407cae4eb321c0c456fe16a, type: 3}
-  spread: 0.203
-  redColorCount: 6
-  greenColorCount: 6
-  blueColorCount: 6
-  bayerLevel: 1
+  spread: 0
+  redColorCount: 16
+  greenColorCount: 16
+  blueColorCount: 16
+  bayerLevel: 2
   downSamples: 1
   pointFilterDown: 0
 --- !u!114 &591115716
@@ -34781,15 +34782,15 @@ MonoBehaviour:
   Gradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 0, g: 1, b: 0.09606981, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 1, g: 0.70980394, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 5975
-    ctime1: 18697
+    ctime0: 0
+    ctime1: 65535
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -34806,7 +34807,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: 0
-    m_NumColorKeys: 3
+    m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   Mix: 0
   AutoPlay: 1
@@ -34834,8 +34835,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Bear Duck
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ebb2c0938eac4144fa330d983a7dc71a, type: 2}
+  m_sharedMaterial: {fileID: 3640565281491679387, guid: ebb2c0938eac4144fa330d983a7dc71a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -37902,8 +37903,8 @@ MonoBehaviour:
   CharactersPerDuration: 0
   Gradient:
     serializedVersion: 2
-    key0: {r: 0.79690635, g: 0.81960785, b: 0.31372544, a: 1}
-    key1: {r: 0.77254903, g: 0.41719085, b: 0.121568605, a: 1}
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0.19607843, g: 0.14813834, b: 0.105882354, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -37911,7 +37912,7 @@ MonoBehaviour:
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 35852
+    ctime1: 65535
     ctime2: 65535
     ctime3: 0
     ctime4: 0
@@ -37928,7 +37929,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_ColorSpace: -1
-    m_NumColorKeys: 3
+    m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   Mix: 0
   AutoPlay: 1
@@ -37956,8 +37957,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press Space
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ebb2c0938eac4144fa330d983a7dc71a, type: 2}
+  m_sharedMaterial: {fileID: 3640565281491679387, guid: ebb2c0938eac4144fa330d983a7dc71a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
