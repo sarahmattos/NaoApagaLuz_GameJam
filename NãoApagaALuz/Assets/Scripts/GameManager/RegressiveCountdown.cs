@@ -14,6 +14,8 @@ public class RegressiveCountdown : MonoBehaviour
     private float remainingTime;
     private bool isWarningActive = false;
 
+    bool setSoundRemaing = false;
+
     private void Start()
     {
         remainingTime = (startMinutes * 60) + startSeconds;
@@ -36,9 +38,14 @@ public class RegressiveCountdown : MonoBehaviour
             {
                 isWarningActive = true;
                 StartCoroutine(FlashWarning());
-            }
+                if (!setSoundRemaing)
+                {
+                    Soundmanager.Instance.TimeRemaingSound();
+                    setSoundRemaing = true;
+                }
+             }
 
-            yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(1);
             remainingTime--;
         }
 

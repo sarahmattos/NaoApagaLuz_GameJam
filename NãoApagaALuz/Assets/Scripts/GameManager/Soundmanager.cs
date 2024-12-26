@@ -6,11 +6,14 @@ public class Soundmanager : MonoBehaviour
 {
     [SerializeField] private AudioSource m_AudioSource;
     [SerializeField] private AudioSource music_AudioSource;
+    [SerializeField] private AudioSource time_AudioSource;
     [SerializeField] private AudioClip _click;
     [SerializeField] private AudioClip _clickoff;
     [SerializeField] private AudioClip[] _scary;
     [SerializeField] private AudioClip _hit;
     [SerializeField] private AudioClip _door;
+    [SerializeField] private AudioClip _popup;
+    [SerializeField] private AudioClip _timeRemaing;
     public static Soundmanager Instance;
     int currentId = 0;
     void Start()
@@ -19,6 +22,11 @@ public class Soundmanager : MonoBehaviour
         Instance = this;
     }
     public void ClickLigthOn() => PlaySound(_click);
+    public void TimeRemaingSound()
+    {
+        time_AudioSource.Play();
+    }
+    public void PopUp() => PlaySound(_popup);
     public void ClickLigthOff() => PlaySound(_clickoff);
     public void MusicPLay()
     {

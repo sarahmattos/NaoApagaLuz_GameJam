@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     public Slider sliderStunn; 
     public Image imageEstun; 
     public TMP_Text textEstun; 
-    public float totalTime = 15f; 
+    public float totalTime = 20f; 
     public float stunTime = 6f; 
     private float timeElapsed = 0f;
     [SerializeField] GameObject gun;
@@ -75,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
     void HandleInteraction()
     {
         // Verifica se o botão esquerdo do mouse foi pressionado
+        if (!GameManager.instance.startedGame) return;
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));

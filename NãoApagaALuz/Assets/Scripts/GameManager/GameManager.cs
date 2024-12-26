@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -14,7 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private  GameObject uiGame;
     [SerializeField] private  GameObject tutorial;
     [SerializeField] private  GameObject tutorialUi;
-
+    bool newNumber=false;
     bool hasCallEndDialogue = false;
 
     [SerializeField] private TMP_Text timeRemaningStartText;
@@ -69,6 +71,7 @@ public class GameManager : MonoBehaviour
     }
     public void FinishGame()
     {
+        FindAnyObjectByType<NavMeshAgent>().speed = 0;
         FindAnyObjectByType<CharacterController>().enabled = false;
         //Time.timeScale = 0.0f;
         string nextScene = "";
@@ -95,6 +98,7 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator TimeToStart()
     {
+        float old=0;
         gameObject.SetActive(true);
 
         timeStartRemaining = timeStart;
@@ -104,7 +108,16 @@ public class GameManager : MonoBehaviour
             timeStartRemaining -= Time.deltaTime;
             float aux = Mathf.Floor(timeStartRemaining);
             timeRemaningStartText.text = aux.ToString();
-
+            if (aux != old)
+            {
+                newNumber = true;
+                old = aux;
+            }
+            if (newNumber)
+            {
+                Soundmanager.Instance.PopUp();
+                newNumber = false;
+            }
 
             yield return null;
 
