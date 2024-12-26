@@ -17913,7 +17913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1127732521
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18433,12 +18433,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207479941}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9192, y: 1.9192, z: 1.9192}
+  m_LocalScale: {x: 1.9191997, y: 1.9191997, z: 1.9191997}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 585160019804402410}
+  m_Father: {fileID: 2856364318535110358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -29474,10 +29474,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 491e09a2f20524cf682d652666575b79, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 26b88b46227c8ae428aa1ab6e17f2415, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.305
-  m_Pitch: 1
+  m_Volume: 0.2
+  m_Pitch: 0.2
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -29981,7 +29981,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4280212479
-  m_fontColor: {r: 1, g: 0.860535, b: 0.11792451, a: 1}
+  m_fontColor: {r: 1, g: 0.860535, b: 0.11792451, a: 0.7058824}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -36991,8 +36991,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1207479942}
+  m_Children: []
   m_Father: {fileID: 2856364318535110358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -38541,7 +38540,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3019942373
+    rgba: 3036676095
   m_fontColor: {r: 1, g: 1, b: 1, a: 0.7058824}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -40166,6 +40165,7 @@ RectTransform:
   - {fileID: 585160019804402410}
   - {fileID: 5276482010257927098}
   - {fileID: 2600971501583093171}
+  - {fileID: 1207479942}
   - {fileID: 3508239570865893326}
   - {fileID: 2863023650692761887}
   m_Father: {fileID: 2499039266063138256}
@@ -41992,7 +41992,7 @@ MonoBehaviour:
   startSeconds: 0
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   warningColor: {r: 1, g: 0, b: 0, a: 1}
-  warningTime: 10
+  warningTime: 15
 --- !u!1 &4190108720455663303
 GameObject:
   m_ObjectHideFlags: 0
@@ -47962,7 +47962,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3019899135
+    rgba: 3036676095
   m_fontColor: {r: 1, g: 1, b: 1, a: 0.7058824}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -48990,7 +48990,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 45
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
