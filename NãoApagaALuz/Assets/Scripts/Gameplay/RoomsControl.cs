@@ -16,7 +16,7 @@ public class RoomsControl : MonoBehaviour
 
     bool canCloseDoor = false;
 
-    [SerializeField] private float totalTime = 15f;  
+    [SerializeField] private float totalTime = 10f;  
     private float timeElapsed = 0f; 
 
     public static RoomsControl Instance;
