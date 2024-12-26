@@ -42,7 +42,7 @@ public class FinishManager : MonoBehaviour
     }
     public void ThingsToDoToStartGame()
     {
-
+        Cursor.lockState = CursorLockMode.None;
         BackMenu();
     }
     public void BackMenu()

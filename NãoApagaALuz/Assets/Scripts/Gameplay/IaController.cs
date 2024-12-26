@@ -17,7 +17,7 @@ public class IaController : MonoBehaviour
     [SerializeField] Material stunnedMat;
     [SerializeField] Material defaultMat;
 
-    [SerializeField] private float totalTime = 5f;
+    [SerializeField] private float totalTime = 20f;
     private float timeElapsed = 0f;
 
     public enum IaState
