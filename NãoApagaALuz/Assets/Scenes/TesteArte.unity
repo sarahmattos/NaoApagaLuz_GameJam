@@ -42103,8 +42103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 6891099099657252538}
-  startMinutes: 0
-  startSeconds: 20
+  startMinutes: 5
+  startSeconds: 0
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   warningColor: {r: 1, g: 0, b: 0, a: 1}
   warningTime: 15

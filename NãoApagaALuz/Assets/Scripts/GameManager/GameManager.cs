@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
     }
     public void FinishGame()
     {
+        startedGame = false;
         FindAnyObjectByType<NavMeshAgent>().speed = 0;
         FindAnyObjectByType<CharacterController>().enabled = false;
         //Time.timeScale = 0.0f;
