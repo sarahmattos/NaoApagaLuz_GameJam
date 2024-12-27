@@ -30103,7 +30103,7 @@ MonoBehaviour:
   rooms: []
   allDoors: []
   player: {fileID: 4856576182528288497}
-  totalTime: 10
+  totalTime: 15
 --- !u!1 &1774810522
 GameObject:
   m_ObjectHideFlags: 0
@@ -33888,7 +33888,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ea22f7539bbd7aa44b05118fd4617683, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 84504a14b61803b4f94acb56e9b118c6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -49105,7 +49105,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 45
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
