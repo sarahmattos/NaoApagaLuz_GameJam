@@ -3692,19 +3692,20 @@ MonoBehaviour:
   - Come on, get up! This time, the dream has clear instructions. No excuses for
     getting lost, okay?
   - "I'll set a timer, and then we\u2019ll run around the house. Use the WASD keys
-    to move. I\u2019ll turn off the lights, and you have to turn them back on. Use
-    the mouse button for that."
-  - Whoever has the most when the timer runs out wins.
+    to move and SHIFT to sprint."
+  - "I\u2019ll turn off the lights, and you have to turn them back on. Use the mouse
+    button for that."
+  - Whoever has the most lights on or off when the timer runs out wins.
   - Simple as that. If I win... well, you know what happens when the lights go out.
   - "And if you win? Congratulations. That\u2019s it."
   - But, sweetheart, with rules so simple, I had to spice things up a little to make
     it more fun.
-  - "First: I don\u2019t respect doors\u2026 and sometimes, not even walls."
+  - "First: I don\u2019t respect doors."
   - 'Second: I can lock some doors whenever I want. Try to escape, just like she
     did.'
   - "And the third ability? Oh, you\u2019ll find out soon enough..."
-  - "As for you... well, you have that thing. It seems to work on me in some way.
-    Press E to aim it at me\u2026 you know, if it gets to be too much."
+  - As for you... well, you have that thing. It seems to work on me in some way.
+    Press E to activate it, and the left mouse button to shoot.
   - "Now that everything\u2019s explained, let\u2019s start our little game, sweetheart.
     May the best one win..."
   dialogueText: {fileID: 1408904146}
@@ -31224,7 +31225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01359725
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalPosition.y
@@ -31232,7 +31233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.09604263
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 708c254d97ed23d40be20c04cc4919ed, type: 3}
       propertyPath: m_LocalRotation.w
@@ -45199,7 +45200,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.27, z: 0}
 --- !u!114 &6629687801142080875
 MonoBehaviour:
   m_ObjectHideFlags: 0

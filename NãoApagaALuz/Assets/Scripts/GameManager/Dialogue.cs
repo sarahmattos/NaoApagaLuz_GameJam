@@ -34,7 +34,7 @@ public class Dialogue : MonoBehaviour
         else
         {
             dialogueText.GetComponent<TextMeshProEffect>().enabled = true;
-            if (currentTextIndex == 12)
+            if (currentTextIndex == 13)
             {
                 return true;
             }
