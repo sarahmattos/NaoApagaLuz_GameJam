@@ -3709,7 +3709,7 @@ MonoBehaviour:
   - "Now that everything\u2019s explained, let\u2019s start our little game, sweetheart.
     May the best one win..."
   dialogueText: {fileID: 1408904146}
-  typingSpeed: 0.08
+  typingSpeed: 0.05
   currentTextIndex: -1
 --- !u!1 &267278219
 GameObject:
@@ -20789,8 +20789,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 5, y: 29}
-  m_SizeDelta: {x: -10.000122, y: -10}
+  m_AnchoredPosition: {x: 0, y: 29}
+  m_SizeDelta: {x: -400, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1408904146
 MonoBehaviour:
@@ -42104,7 +42104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 6891099099657252538}
-  startMinutes: 5
+  startMinutes: 3
   startSeconds: 0
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   warningColor: {r: 1, g: 0, b: 0, a: 1}
